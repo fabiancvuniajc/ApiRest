@@ -10,9 +10,9 @@ import java.util.List;
 @Repository
 public interface VideoJuegoJpaRepository extends JpaRepository<VideoJuego, Integer> {
 
-    List<VideoJuego> findByCategory_Name(String categoryName);
+    List<VideoJuego> findByCategory_Nombre(String categoryName);
 
     @Query("SELECT v FROM VideoJuego v WHERE " +
-            "v.category.name = :nombreCategoria")
-    List<VideoJuego> buscarPorNombreCagegorio(String nombreCategoria);
+            "v.category.nombre = :nombreCategoria")
+    List<VideoJuego> buscarPorNombreCategoria(String nombreCategoria);
 }
